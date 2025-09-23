@@ -9,6 +9,7 @@ const Payment = () => {
 
   const [paymentMethod, setPaymentMethod] = useState("card");
   const [isProcessing, setIsProcessing] = useState(false);
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -82,7 +83,14 @@ const Payment = () => {
 
       completePayment(orderData);
 
-      navigate("/payment-success", { state: { orderData } });
+      // Show success message
+      setPaymentSuccess(true);
+
+      // Redirect to products after 2 seconds
+      setTimeout(() => {
+        navigate("/products");
+      }, 2000);
+
     } catch (err) {
       alert("Payment failed.");
     } finally {
@@ -97,6 +105,23 @@ const Payment = () => {
         <button onClick={() => navigate("/products")}>Go to Products</button>
       </div>
     );
+
+  // Success screen
+  if (paymentSuccess) {
+    return (
+      <div className="payment-container">
+        <div className="payment-success">
+          <div className="success-icon">✓</div>
+          <h2>Order Placed Successfully!</h2>
+          <p>Thank you for your purchase. You will be redirected to our products page shortly.</p>
+          <div className="loading-indicator">
+            <div className="spinner"></div>
+            <p>Redirecting...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="payment-container">
