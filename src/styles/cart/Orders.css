@@ -1,0 +1,167 @@
+/* Payment History Styles */
+.history-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.history-container h2 {
+  color: #333;
+  margin-bottom: 24px;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px dashed #dee2e6;
+}
+
+.empty-msg {
+  font-size: 18px;
+  color: #6c757d;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.empty-subtitle {
+  font-size: 14px;
+  color: #adb5bd;
+  margin: 0;
+}
+
+/* Transaction List */
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Transaction Card */
+.transaction-card {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transaction-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Transaction Header */
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.transaction-date {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.transaction-date strong {
+  color: #495057;
+}
+
+.transaction-total {
+  font-size: 16px;
+  font-weight: 600;
+  color: #28a745;
+  background: #d4edda;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* Items Section */
+.items-section h4 {
+  font-size: 16px;
+  color: #495057;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item-name {
+  font-size: 14px;
+  color: #333;
+  flex: 1;
+}
+
+.item-price {
+  font-size: 14px;
+  font-weight: 500;
+  color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .history-container {
+    padding: 16px;
+  }
+  
+  .history-container h2 {
+    font-size: 24px;
+  }
+  
+  .transaction-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .transaction-total {
+    align-self: flex-end;
+  }
+  
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .item-price {
+    align-self: flex-end;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .transaction-card {
+    padding: 16px;
+  }
+  
+  .empty-state {
+    padding: 40px 16px;
+  }
+}
