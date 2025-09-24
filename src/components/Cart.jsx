@@ -3,7 +3,7 @@ import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import "../styles/cart/Cart.css";
 
-const BASE_URL = 'http://localhost:8088';
+const BASE_URL = 'http://ec2-18-222-48-109.us-east-2.compute.amazonaws.com:8088';
 
 const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity, clearCart } = useCart();
