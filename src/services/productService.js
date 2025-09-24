@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "/api/products";
+const BASE_URL = "http://ec2-18-188-177-237.us-east-2.compute.amazonaws.com:8088/api/products";
 
 export const getProducts = async (category) => {
   try {
