@@ -1,11 +1,18 @@
+// frontend/src/api/auth.js
 import axios from "axios";
 
-const API_URL = "http://ec2-18-188-177-237.us-east-2.compute.amazonaws.com:8088/auth";
+// Use relative URL
+const API_URL = "/auth";
 
 export const login = async (username, password) => {
-  const response = await axios.post(`${API_URL}/login`, { username, password });
-  localStorage.setItem("token", response.data);
-  return response.data;
+  try {
+    const response = await axios.post(`${API_URL}/login`, { username, password });
+    localStorage.setItem("token", response.data.token); // store only the token
+    return response.data;
+  } catch (error) {
+    console.error("Login failed:", error.response?.data || error.message);
+    throw error;
+  }
 };
 
 export const signup = async (username, email, password) => {
