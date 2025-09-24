@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // Use relative URL
-const API_URL = "/auth";
+const API_URL = "http:ec2-18-222-48-109.us-east-2.compute.amazonaws.com:8088/auth";
 
 export const login = async (username, password) => {
   try {
