@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const CART_API_URL = "/api/cart"; // relative path
+const CART_API_URL = "http://ec2-18-188-177-237.us-east-2.compute.amazonaws.com:8088/api/cart"; // relative path
 
 export const addToCart = async (userId, productId) => {
   return await axios.post(`${CART_API_URL}/add`, {
